@@ -58,5 +58,7 @@ tar xzf Figbird.tar.gz
 cd Figbird
 chmod a+x RunFigbird.sh && ./RunFigbird.sh Config.json
 ```
+## Output
+Review the "Manual.pdf" inside the folder to find out details format of the output.
 
 ## Citations
