@@ -1,6 +1,6 @@
 # Figbird
 Filling gaps based on insert range distribution
-- A software designed for filling gaps in draft genome assemblies using second generation Illumina sequencing reads.
+- A software developed in C++ for filling gaps in draft genome assemblies using second generation Illumina sequencing reads.
 - Supports read pairs of both smaller inserts(~200 bp) and larger inserts (~3500 bp).
 - Utilizes probabilistic methods instead of graph based methods based on insert size information of read pairs.
 - Makes maximum use of available sequence information by using both partially aligned reads as well as unampped reads.
@@ -44,10 +44,10 @@ Figbird uses a configuration file in JSON format to take scaffold and read libra
 	* [Users must input atleast one library of read pair files and all 9 required information per library to start gap filling] 
 	
 - <strong>Parameters</strong>: 
-	1. <strong>numthreads</strong>: Number of threads used during bowtie2 alignment and gap filling procedure.
-	2. <strong>evaluation</strong>: Put 1 if you want to assess with QUAST or 0 otherwise.
+	1. <strong>numthreads</strong>: Number of threads used during bowtie2 alignment and gap filling procedure.[Default:4]
+	2. <strong>evaluation</strong>: Put 1 if you want to assess with QUAST or 0 otherwise.[Default:0]
 	3. <strong>gaplen_negative_overlap</strong>: We have allowed negative gap lengths in our method i.e a gap can be diminished if the corresponding left and right flank has an overlap with supporting verification of aligned reads. Enter the maximum length of the gaps for which this method will be applicable.[Default: 30]
-	4. <strong>default</strong>: If you want to fix the order of the reads usage along with their number of iterations, put 0. Otherwise, put 1 for default approach. If you put 1, then information [6-9] for read pairs won't be needed to specify.
+	4. <strong>default</strong>: If you want to manually input the order of the reads usage along with their number of iterations, put 0. Otherwise, put 1 for default approach. If you put 1, then information [6-9] for read pairs won't be needed to specify.[Default:1]
 	5. <strong>trim_len</strong>: The amount of nucleotides being chopped off from either side of the gapped regions as this is the stopping point for the assemblers and highly likely to contain erroneous sequence.[Deafult:10]
 	
 ## Running Figbird
