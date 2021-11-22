@@ -26,16 +26,16 @@ sudo apt install bc
 Figbird uses a configuration file in JSON format to take scaffold and read library information. A sample configuration file named "Config.json" is provided in the installation folder which must be editted accordingly. Users can also use this website (http://jsonlint.com/) to check the validity of their input config file. Following is the list of required information specified in the JSON file with explanations:
 
 - <strong>Draft_genome</strong>: Path to the gapped draft genome to fill.
-- <strong>Bowtie2</strong>: Path to the bowtie2 executables. If you use the bowtie2 version inside the folder, then put "bowtie2-2.2.3", otherwise if it is in system path, then put “” in the path. In case you want to use your preferred version, put that path of installed directory in input.
-- <strong>Output_Folder</strong>: Path to the directory where all the outputs will be stored. 
+- <strong>Bowtie2</strong>: Path to the bowtie2 executables. If you use the bowtie2 version inside the folder, then put "bowtie2-2.2.3", otherwise if it is in system path, then put “” here. In case you want to use your preferred version, put that path of installed directory in this input.
+- <strong>Output_Folder</strong>: Path to the directory where all the outputs will be stored. A folder named Figbird will be created in that directory where all the output will be stored. 
 - <strong>Reference_Genome[optional]</strong>: Only needed if you want to evaluate the quality of the filled assembly using QUAST.
 - <strong>Read_Pairs</strong>: Input your paired read libraries one by one along with all the following information:
 	
 	1. <strong>path_1</strong>: Path to first of the read pair files.
  	2. <strong>path_2</strong>: Path to second of the read pair files.
-	3. <strong>avg_insert_size</strong>: Average insert size of the read pair library.
+	3. <strong>avg_insert_size</strong>: Average insert size of the read pair library(<5000).
 	4. <strong>is_reverse</strong>: If your read pair files are already in forward-reverse(FR) orientation then put 0, otherwise put 1. In case a 1 is given, we will reverse complement both the files of the the input read pair.
-	5. <strong>max_read_len</strong>: Maximum read length of the library.
+	5. <strong>max_read_len</strong>: Maximum read length of the library(<=200).
 	6. <strong>serial_num</strong>: The order of reads usage for filling gaps.
 	7. <strong>num_itr_partial</strong>: We will use both one end partially aligned and one end unmapped reads for each read pair for gap filling purpose. Enter the itration count for partial approach here.
 	8. <strong>num_itr_unmapped</strong>: Enter the itration count for unmapped approach here.
