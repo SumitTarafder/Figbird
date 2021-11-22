@@ -3,7 +3,7 @@ Filling Gaps by Iterative Read Distribution
 - A software developed in C++ for filling gaps in draft genome assemblies using second generation Illumina sequencing reads.
 - Supports read pairs of both smaller inserts(~200 bp) and larger inserts (~3500 bp).
 - Utilizes probabilistic methods instead of graph based methods based on insert size information of read pairs.
-- Makes maximum use of available sequence information by using both partially aligned reads as well as unampped reads.
+- Makes maximum use of available sequence information by using both partially aligned reads as well as unmapped reads.
 
 ## Dependencies
 The software can run on Linux and Mac systems with a few dependencies listed below:
