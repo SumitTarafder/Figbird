@@ -1,0 +1,41 @@
+{
+    "Directory":
+    {
+        "Draft_Genome": "Files/Data/Staph/Assembly/ABySS2/genome.scf.fasta",
+        "Bowtie2": "bowtie2-2.2.3/",
+        "Output_Folder": "Files/",
+        "Reference_Genome": "Files/Data/Staph/Data/original/genome.fasta"
+    },
+    "Read_Pairs": [
+		    {
+		        "path_1": "Files/Data/Staph/Data/original/frag_1.fastq",
+		        "path_2": "Files/Data/Staph/Data/original/frag_2.fastq",
+		        "avg_insert_size": 180,
+		        "is_reverse": 0,
+                "max_read_length" : 101,
+                "serial_num": 2,
+                "num_itr_partial": 0,
+                "num_itr_unmapped": 0,
+                "order": [ "p", "u"]
+		    },
+		    {
+                "path_1": "Files/Data/Staph/Data/original/Data/quakeCor/shortjump_1.fastq",
+		        "path_2": "Files/Data/Staph/Data/original/Data/quakeCor/shortjump_2.fastq",
+		        "avg_insert_size": 3500,
+		        "is_reverse": 1,
+                "max_read_length" : 37,
+                "serial_num": 1,
+                "num_itr_partial": 1,
+                "num_itr_unmapped": 0,
+                "order": [ "u", "p"]
+            }
+	  ],
+    "Parameters":
+    {
+        "numthreads": 4,
+        "evaluation" : 0,
+        "default": 1,
+        "gaplen_negative_overlap": 30,
+        "trim_len": 10
+    }	
+}
