@@ -93,17 +93,17 @@ done
 
 for (( i=0; i<$Total_read_lib; i++ ))
 do
-    if [ ${isz[$i]} -le 0 || ${isz[$i]} -gt $max_allowed_isz ]; then
+    if [[ ${isz[$i]} -le 0 || ${isz[$i]} -gt $max_allowed_isz ]]; then
       echo "Please enter a valid insert size(<=$max_allowed_isz) in configuration file."
       exit 1
     fi
 
-    if [ ${max_read_len[$i]} -le 0 || ${max_read_len[$i]} -gt $max_allowed_readlen ]; then
+    if [[ ${max_read_len[$i]} -le 0 || ${max_read_len[$i]} -gt $max_allowed_readlen ]]; then
       echo "Please enter a valid read length(<=$max_allowed_readlen) in configuration file."
       exit 1
     fi
 
-    if [ ${order[$((2*$i))]} = ${order[$((2*$i+1))]} ]; then
+    if [[ ${order[$((2*$i))]} = ${order[$((2*$i+1))]} ]]; then
       echo "Please enter different types in order object of read pairs in configuration file."
       exit 1
     fi
