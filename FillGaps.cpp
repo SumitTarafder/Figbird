@@ -61,7 +61,7 @@ void thread_fillgap(int tid,int read_length,int load)
     strcat(exefile,temp2);
     strcat(exefile,".out");
 
-    strcpy(command,"g++ FigBird.cpp -o ");
+    strcpy(command,"g++ Figbird.cpp -o ");
     strcat(command,exefile);
 	strcat(command," && ./");
 
