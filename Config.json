@@ -36,6 +36,7 @@
         "evaluation" : 0,
         "default": 1,
         "gaplen_negative_overlap": 30,
-        "trim_len": 10
+        "trim_len": 10,
+        "set_inputmean": 0
     }	
 }
