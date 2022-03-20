@@ -49,6 +49,7 @@ Figbird uses a configuration file in JSON format to take scaffold and read libra
 	3. <strong>gaplen_negative_overlap</strong>: We have allowed negative gap lengths in our method i.e a gap can be diminished if the corresponding left and right flank has an overlap with supporting verification of aligned reads. Enter the maximum length of the gaps for which this method will be applicable.[Default: 30]
 	4. <strong>default</strong>: If you want to manually input the order of the reads usage along with their number of iterations, put 0. Otherwise, put 1 for default approach. If you put 1, then information [6-9] for read pairs won't be needed to specify.[Default:1]
 	5. <strong>trim_len</strong>: The amount of nucleotides being chopped off from either side of the gapped regions as this is the stopping point for the assemblers and highly likely to contain erroneous sequence.[Deafult:10]
+	6. <strong>set_inputmean</strong>: It can be set to either 0 or 1. Users can set this parameter to 1 to set the minimum scaffold length equal to the “avg_insert_size” of the read library to reduce bias towards shorter insert sizes during alignment for learning distributions. Otherwise, set it to 0 for no limits.[Deafult:0]
 	
 ## Running Figbird
 Download the folder https://github.com/SumitTarafder/Figbird. Users can directly run the tool if all the dependencies are installed beforehand.
