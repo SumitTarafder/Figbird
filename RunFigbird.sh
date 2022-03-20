@@ -44,6 +44,7 @@ default_setting=$($cmd .$Key3.default $config_file)
 eval=$($cmd .$Key3.evaluation $config_file)
 neg_ovlap=$($cmd .$Key3.gaplen_negative_overlap $config_file)
 trim=$($cmd .$Key3.trim_len $config_file)
+set_inputmeanflag=$($cmd .$Key3.set_inputmean $config_file)
 
 Total_read_lib=$($cmd .$Key2' | length' $config_file)
 
@@ -344,7 +345,7 @@ function run_bowtie(){
 
     echo "Gap filling starts..."
 
-    g++ -std=c++11 -pthread FillGaps.cpp && ./a.out $gapped_genome $maxdistance $maxreadlen $count $partial_flag $unmapped $num_threads $myoutfilename $temp_file_path $gapped_reads_path $neg_ovlap $partial_readlen $trim
+    g++ -std=c++11 -pthread FillGaps.cpp && ./a.out $gapped_genome $maxdistance $maxreadlen $count $partial_flag $unmapped $num_threads $myoutfilename $temp_file_path $gapped_reads_path $neg_ovlap $partial_readlen $trim $set_inputmean $m2
 
     contigfile=$result_path$count$filled_filename
     gapfile=$gapout_path$"gapout_"$count".txt"
@@ -469,7 +470,7 @@ function run_bowtie_user(){
 
     fi
 
-    g++ -std=c++11 -pthread FillGaps.cpp && ./a.out $genome $maxdistance_fig $mreadlen $count $p_flag $u_flag $num_threads $myoutfname  $temp_file_path $gapped_reads_path $neg_ovlap $partial_readlen $trim
+    g++ -std=c++11 -pthread FillGaps.cpp && ./a.out $genome $maxdistance_fig $mreadlen $count $p_flag $u_flag $num_threads $myoutfname  $temp_file_path $gapped_reads_path $neg_ovlap $partial_readlen $trim $set_inputmean $m2
 
     contigfile=$result_path$count$filled_filename
     gapfile=$gapout_path$"gapout_"$count".txt"

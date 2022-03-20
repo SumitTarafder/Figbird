@@ -42,7 +42,7 @@ char *contigFileName;
 char* samoutfilename;
 char* tp,*grp;
 
-int tempmaxDistance,gtf,read_length,script_itr,partial_flag,unmapped,neg_overlap,partial_readlen,trim;
+int tempmaxDistance,gtf,read_length,script_itr,partial_flag,unmapped,neg_overlap,partial_readlen,trim,setinputmeanflag,insertsizemean;
 
 int **gapallocate;
 int g2fcount=0;
@@ -117,6 +117,14 @@ void thread_fillgap(int tid,int read_length,int load)
     strcat(command," ");
     
     sprintf(temp2,"%d",gapthresh);
+    strcat(command,temp2);
+    strcat(command," ");
+    
+    sprintf(temp2,"%d",setinputmeanflag);
+    strcat(command,temp2);
+    strcat(command," ");
+    
+    sprintf(temp2,"%d",insertsizemean);
     strcat(command,temp2);
     
     //cout<<"In thread - "<<tid<<endl;
@@ -421,6 +429,8 @@ int main(int argc, char *argv[])
     neg_overlap=atoi(argv[11]);
     partial_readlen=atoi(argv[12]);
     trim=atoi(argv[13]);
+    setinputmeanflag=atoi(argv[14]);
+    insertsizemean=atoi(argv[15]);
 
     //=================More processing...===================
     

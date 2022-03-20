@@ -6944,7 +6944,7 @@ int main(int argc, char *argv[])
     long int insertSum=0;
 
     int nonzeroCount=0,read_length=0;
-    int gapstartno,gapendno,thread_id,neg_lap,partial_len,totalgapstofill,unm_limit;
+    int gapstartno,gapendno,thread_id,neg_lap,partial_len,totalgapstofill,unm_limit,setinputmeanflag;
 
     char *gapped_read_path;
     char *temp_path;
@@ -6968,6 +6968,9 @@ int main(int argc, char *argv[])
 	neg_lap=atoi(argv[12]);
 	partial_len=atoi(argv[13]);
     unm_limit = atoi(argv[14]);
+    setinputmeanflag=atoi(argv[15]);
+    
+    if(setinputmeanflag == 1)inputMean = atoi(argv[16]);
 	//cout<<gapstartno<<"\t"<<gapendno<<"\t"<<thread_id<<endl;
 
 
