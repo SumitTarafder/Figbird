@@ -63,3 +63,4 @@ chmod a+x RunFigbird.sh && ./RunFigbird.sh Config.json
 Review the "Manual.pdf" inside the folder to find out details format of the output.
 
 ## Citations
+- Sumit Tarafder, Mazharul Islam, Swakkhar Shatabda, Atif Rahman, Figbird: a probabilistic method for filling gaps in genome assemblies, Bioinformatics, Volume 38, Issue 15, 1 August 2022, Pages 3717–3724, https://doi.org/10.1093/bioinformatics/btac404
